@@ -1,0 +1,20 @@
+body {
+  /**
+   * These values will not show up in content, but can be
+   * queried by JavaScript to know which breakpoint is active.
+   * Add or remove as many breakpoints as you like.
+   * :before declarations init modules contained within the breakpoint
+   */ }
+  body:before {
+    content: 'sm';
+    display: none;
+    /* Prevent from displaying. */ }
+    @media (min-width: 768px) {
+      body:before {
+        content: 'md'; } }
+    @media (min-width: 1024px) {
+      body:before {
+        content: 'lg'; } }
+    @media (min-width: 1280px) {
+      body:before {
+        content: 'xl'; } }

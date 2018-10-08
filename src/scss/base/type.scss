@@ -1,0 +1,94 @@
+@import "../variables/variables.scss";
+@import "../variables/mixins.scss";
+
+%font-arial { font-family: $font-arial; }
+
+.type--a1,
+.type--a2,
+.type--a3,
+.type--a4,
+.type--a5,
+.type--a6,
+.type--a7,
+.type--a8,
+.type--a9 {
+  @extend %font-arial;
+  line-height: 1;
+}
+
+.type--a1 {
+  @include font-size(28);
+  @include letter-spacing(-59);
+
+  @include breakpoint(md) {
+    @include font-size(38);
+  }
+
+  @include breakpoint(lg) {
+    @include font-size(51);
+  }
+}
+
+.type--a2 {
+  @include font-size(28);
+  @include letter-spacing(-59);
+
+  @include breakpoint(md) {
+    @include font-size(32);
+    @include letter-spacing(-80);
+  }
+}
+
+.type--a3 {
+  @include font-size(21);
+  @include letter-spacing(-23);
+
+  @include breakpoint(md) {
+    @include font-size(28);
+    @include letter-spacing(-30);
+  }
+
+  @include breakpoint(lg) {
+    @include font-size(38);
+    @include letter-spacing(-41);
+  }
+}
+
+.type--a4 {
+  @include font-size(16);
+  @include letter-spacing(-34);
+  line-height: 1.44;
+
+  @include breakpoint(md) {
+    @include font-size(21);
+    @include letter-spacing(-44);
+  }
+}
+
+.type--a5 {
+  @include font-size(16);
+}
+
+.type--a6 {
+  @include font-size(16);
+  @include letter-spacing(-20);
+
+  @include breakpoint(md) {
+    @include font-size(21);
+    @include letter-spacing(-27);
+  }
+}
+
+.type--a7 {
+  @include font-size(16);
+  @include letter-spacing(-17);
+}
+
+.type--a8 {
+  @include font-size(14);
+  @include letter-spacing(-15);
+}
+
+.type--a9 {
+  @include font-size(13);
+}
