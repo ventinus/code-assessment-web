@@ -6,7 +6,7 @@ import { getVisibleProducts } from '../reducers/products'
 import { ProductItem, ProductsList } from '../components'
 
 const ProductsContainer = ({ products, addToCart }) => (
-  <ProductsList title="Products">
+  <ProductsList>
     {products.map(product =>
       <ProductItem
         key={product.id}

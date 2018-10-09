@@ -11,7 +11,7 @@ export const Base = ({ onClick, children, type = 'button', className = '', disab
   </button>
 )
 
-export const PrimaryButton = props => <Base className='button--primary' {...props} />
+export const PrimaryButton = ({ className, ...props }) => <Base className={`button--primary ${className ? className : ''}`} {...props} />
 export const SecondaryButton = ({ className, ...props }) => <Base className={`button--secondary ${className ? className : ''}`} {...props} />
 export const SecondaryAltButton = ({ className, ...props }) => <Base className={`button--secondary-alt ${className ? className : ''}`} {...props} />
 export const DecButton = ({ children, ...props }) => (
