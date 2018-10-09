@@ -38,3 +38,7 @@ export const checkout = products => (dispatch, getState) => {
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
   })
 }
+
+export const toggleCartVisibility = () => ({
+  type: types.TOGGLE_CART_VISIBILITY,
+})

@@ -1,12 +1,14 @@
 import {
   ADD_TO_CART,
   CHECKOUT_REQUEST,
-  CHECKOUT_FAILURE
+  CHECKOUT_FAILURE,
+  TOGGLE_CART_VISIBILITY,
 } from '../constants/ActionTypes'
 
 const initialState = {
   addedIds: [],
-  quantityById: {}
+  quantityById: {},
+  visible: false,
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -44,10 +46,16 @@ const cart = (state = initialState, action) => {
       return initialState
     case CHECKOUT_FAILURE:
       return action.cart
+    case TOGGLE_CART_VISIBILITY:
+      return {
+        ...state,
+        visible: !state.visible
+      }
     default:
       return {
         addedIds: addedIds(state.addedIds, action),
-        quantityById: quantityById(state.quantityById, action)
+        quantityById: quantityById(state.quantityById, action),
+        visible: state.visible
       }
   }
 }

@@ -17,3 +17,6 @@ export const hasPresence = item => {
       return !!item
   }
 }
+
+
+export const sum = (a, b) => a + b

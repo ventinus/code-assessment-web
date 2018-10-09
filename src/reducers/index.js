@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
+import { sum } from '../helpers'
 
 export default combineReducers({
   cart,
@@ -24,3 +25,6 @@ export const getCartProducts = state =>
     ...getProduct(state, id),
     quantity: getQuantity(state, id)
   }))
+
+export const getCartItemsLength = state =>
+  Object.values(state.cart.quantityById).reduce(sum, 0)

@@ -8,10 +8,10 @@ import './Link.css'
 const RouterLink = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 
 // if routes were needed, this component would handle which to use to link to the path
-export default ({ to, href, className, children, ...props }) => {
+export default ({ to, href, className, children, disabled, ...props }) => {
   const allProps = {
     ...props,
-    className: `link type--a8 ${className ? className : ''}`
+    className: `link type--a8 ${className ? className : ''} ${disabled ? 'disabled' : ''}`
   }
 
   if (hasPresence(to)) {
@@ -19,6 +19,6 @@ export default ({ to, href, className, children, ...props }) => {
   } else if (hasPresence(href)) {
     return <a href={href} {...allProps}>{children}</a>
   } else {
-    return <button type="button" {...allProps}>{children}</button>
+    return <button type="button" onClick={() => !disabled && props.onClick()} {...allProps}>{children}</button>
   }
 }
