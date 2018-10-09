@@ -5,7 +5,8 @@
   @media (min-width: 768px) {
     .cart {
       width: 700px;
-      max-height: 90vh; } }
+      max-height: 90vh;
+      min-height: 70vh; } }
   @media (min-width: 1024px) {
     .cart {
       width: 780px; } }
@@ -19,6 +20,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  @media (min-width: 768px) {
+    .cart__no-products {
+      top: 55%; } }
 
 .cart__no-products__copy {
   margin-top: 20px;
