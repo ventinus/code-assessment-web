@@ -1,11 +1,14 @@
 .button {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 10px 17px;
   text-transform: uppercase; }
   .button.disabled {
     opacity: 0.5;
     pointer-events: none; }
+  @media (min-width: 768px) {
+    .button {
+      padding: 13px 20px; } }
 
 .button--primary {
   background-color: #5E97D1;

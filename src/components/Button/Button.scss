@@ -3,8 +3,12 @@
 
 .button {
   @include disableable();
-  padding: 5px 15px;
+  padding: 10px 17px;
   text-transform: uppercase;
+
+  @include breakpoint(md) {
+    padding: 13px 20px;
+  }
 }
 
 .button--primary {
