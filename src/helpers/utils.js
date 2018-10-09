@@ -21,3 +21,11 @@ export const hasPresence = item => {
 export const sum = (a, b) => a + b
 
 export const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+
+export const removeFromArr = (arr, val) => {
+  const index = arr.indexOf(val)
+  return [
+    ...arr.slice(0, index),
+    ...arr.slice(index + 1)
+  ]
+}

@@ -21,11 +21,23 @@ const Cart = props => {
   )
 }
 
-const CartProducts = ({ products, total, onCheckoutClicked }) => (
+const CartProducts = ({
+  products,
+  total,
+  onAddToCartClicked,
+  onRemoveFromCartClicked,
+  onRemoveAllFromCartClicked,
+  onCheckoutClicked,
+}) => (
   <div>
     <ul className="cart__products">
       {products.map(product =>
-        <CartProduct {...product} key={product.id} />
+        <CartProduct
+          {...product}
+          onAddToCartClicked={onAddToCartClicked}
+          onRemoveFromCartClicked={onRemoveFromCartClicked}
+          onRemoveAllFromCartClicked={onRemoveAllFromCartClicked}
+          key={product.id} />
       )}
     </ul>
 
