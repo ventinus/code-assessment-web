@@ -93,8 +93,8 @@
 
 //  Animation
 //  --------------------------------------------------
-  $default-animation:       all 0.3s             !default;
   $default-animation-duration:  0.3s             !default;
+  $default-animation:       all $default-animation-duration ease-in-out !default;
 
 //  Site Max Width
 //  --------------------------------------------------

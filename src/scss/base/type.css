@@ -91,7 +91,8 @@
 .type--a8 {
   font-size: 14px;
   font-size: 1.4rem;
-  letter-spacing: -0.015em; }
+  letter-spacing: -0.015em;
+  line-height: 1; }
 
 .type--a9 {
   font-size: 13px;

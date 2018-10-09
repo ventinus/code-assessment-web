@@ -1,0 +1,72 @@
+@import '../../scss/variables/mixins.scss';
+@import '../../scss/variables/variables.scss';
+
+.button {
+  padding: 5px 15px;
+  transition: $default-animation;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.button--primary {
+  background-color: $blue-1;
+  color: $white;
+  border-radius: 20px;
+
+  &:not(.disabled):hover {
+    background-color: $blue-2;
+  }
+}
+
+.button--secondary,
+.button--secondary-alt {
+  background-color: $grey-2;
+  color: $grey-7;
+
+  &:not(.disabled):hover {
+    background-color: $blue-1;
+    color: $white;
+  }
+}
+
+.button--secondary { border-radius: 20px 0 0 20px; }
+.button--secondary-alt { border-radius: 0 20px 20px 0; }
+
+.button--dec,
+.button--inc {
+  position: relative;
+  padding: 12px 20px;
+
+  &:before,
+  &:after {
+    // slightly less than the normal duration because of perceived delay with color shifts
+    transition: background-color 250ms ease-in-out;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $grey-7;
+    height: 1px;
+    width: 10px;
+    transform-origin: center center;
+  }
+
+  &:before { transform: translate(-50%, -50%); }
+  &:after { transform: translate(-50%, -50%) rotate(90deg); }
+
+  &:not(.disabled):hover {
+    &:before,
+    &:after {
+      background-color: $white;
+    }
+  }
+}
+
+.button--dec:after {
+  display: none;
+}

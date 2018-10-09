@@ -87,6 +87,7 @@
 .type--a8 {
   @include font-size(14);
   @include letter-spacing(-15);
+  line-height: 1;
 }
 
 .type--a9 {

@@ -113,3 +113,7 @@ $max-breakpoints: (
     }
   }
 }
+
+@function default-transition($property, $duration: $default-animation-duration, $ease: ease-in-out, $delay: 0s) {
+  @return $property $duration $ease $delay;
+}
