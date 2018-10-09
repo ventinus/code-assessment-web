@@ -5,6 +5,8 @@ import {
   PrimaryButton,
 } from '..'
 
+import { toMoney } from '../../helpers'
+
 import './Product.css'
 
 const imageSrc = file => require(`../../assets/images/${file}`)
@@ -15,7 +17,7 @@ const Product = ({ price, inventory, title, src, onAddToCartClicked }) => (
     <div className="product__body">
       <div className="product__body__info">
         <h2 className="type--a3">{title}</h2>
-        <p className="type--a4">&#36;{price}</p>
+        <p className="type--a4">{toMoney(price)}</p>
       </div>
       <p className="product__body__inventory type--a9 type--grey-6">{inventory || 'None'} remaining</p>
 

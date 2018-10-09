@@ -5,6 +5,8 @@ import {
   IncButton,
 } from '..'
 
+import { toMoney } from '../../helpers'
+
 import './CartProduct.css'
 
 const imageSrc = file => require(`../../assets/images/${file}`)
@@ -25,7 +27,7 @@ export default ({
       <img src={imageSrc(src)} />
       <div className="cart-product__info__details">
         <h2 className="type--a7">{title}</h2>
-        <p className="type--a8" style={{marginTop: 5}}>&#36;{price}</p>
+        <p className="type--a8" style={{marginTop: 5}}>{toMoney(price)}</p>
         <button
           className="cart-product__info__details__remove-btn type--a8"
           type="button"
