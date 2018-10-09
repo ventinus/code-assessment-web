@@ -1,4 +1,5 @@
 import React from 'react'
+
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
 
@@ -7,23 +8,23 @@ import {
   SecondaryButton,
   SecondaryAltButton,
   DecButton,
-  IncButton
+  IncButton,
+  Link
 } from '../components'
-import * as buttons from '../components/Button'
 
 import '../scss/global.css'
 
 const App = () => {
-  console.log(buttons)
-  // debugger
+
   return (
     <div style={{backgroundColor: 'white'}}>
       <h2>Shopping Cart Example</h2>
       <div>
         <DecButton onClick={() => console.log('second')} text="Increment" />
         <IncButton onClick={() => console.log('second')} text="Decrement" />
-        <PrimaryButton onClick={() => console.log('first')}>Add to Cart</PrimaryButton>
+        <PrimaryButton onClick={() => console.log('first')} disabled>Add to Cart</PrimaryButton>
       </div>
+      <Link href="/">go here</Link>
       <p className="type--a1">Lorem ipsum dolor sit amet.</p>
       <p className="type--a2">Lorem ipsum dolor sit amet.</p>
       <p className="type--a3">Lorem ipsum dolor sit amet.</p>

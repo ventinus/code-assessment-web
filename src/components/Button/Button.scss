@@ -2,15 +2,9 @@
 @import '../../scss/variables/variables.scss';
 
 .button {
+  @include disableable();
   padding: 5px 15px;
-  transition: $default-animation;
   text-transform: uppercase;
-  cursor: pointer;
-
-  &.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
 }
 
 .button--primary {

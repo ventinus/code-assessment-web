@@ -1,0 +1,12 @@
+@import '../../scss/variables/mixins.scss';
+@import '../../scss/variables/variables.scss';
+
+.link {
+  @include disableable();
+  color: $grey-8;
+
+  &:not(.disabled):hover {
+    color: $blue-2;
+  }
+
+}

@@ -1,8 +1,8 @@
 .button {
-  padding: 5px 15px;
   transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 5px 15px;
+  text-transform: uppercase; }
   .button.disabled {
     opacity: 0.5;
     pointer-events: none; }
