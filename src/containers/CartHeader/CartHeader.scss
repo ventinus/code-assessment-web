@@ -1,0 +1,19 @@
+@import '../../scss/variables/mixins.scss';
+@import '../../scss/variables/variables.scss';
+
+.cart-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $grey-4;
+
+  @include breakpoint(md) {
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include breakpoint(lg) {
+    padding-bottom: 30px;
+  }
+}

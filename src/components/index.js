@@ -8,6 +8,7 @@ export {
 export * from './Icon'
 export {default as Cart} from './Cart'
 export {default as Link} from './Link'
+export {default as PageWrapper} from './PageWrapper'
 export {default as Product} from './Product'
 export {default as ProductItem} from './ProductItem'
 export {default as ProductsList} from './ProductsList'

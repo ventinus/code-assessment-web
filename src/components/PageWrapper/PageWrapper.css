@@ -1,0 +1,12 @@
+.page-wrapper {
+  padding: 30px 15px;
+  max-width: 400px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .page-wrapper {
+      max-width: 700px;
+      padding: 40px 50px 50px; } }
+  @media (min-width: 768px) {
+    .page-wrapper {
+      max-width: 1120px;
+      padding: 55px 80px 70px; } }

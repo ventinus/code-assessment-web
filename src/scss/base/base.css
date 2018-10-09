@@ -161,6 +161,7 @@ textarea {
 button {
   background: none;
   border: 0;
+  padding: 0;
   overflow: visible;
   -webkit-appearance: none; }
 
