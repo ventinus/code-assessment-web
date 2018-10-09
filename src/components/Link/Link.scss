@@ -3,7 +3,7 @@
 
 .link {
   @include disableable();
-  color: $grey-8;
+  color: $grey-9;
 
   &:not(.disabled):hover {
     color: $blue-2;

@@ -18,5 +18,6 @@ export const hasPresence = item => {
   }
 }
 
-
 export const sum = (a, b) => a + b
+
+export const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()

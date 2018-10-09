@@ -19,6 +19,12 @@ export default ({ to, href, className, children, disabled, ...props }) => {
   } else if (hasPresence(href)) {
     return <a href={href} {...allProps}>{children}</a>
   } else {
-    return <button type="button" onClick={() => !disabled && props.onClick()} {...allProps}>{children}</button>
+    return <button
+      type="button"
+      onClick={() => !disabled && props.onClick()}
+      disabled={disabled ? 'disabled' : ''}
+      {...allProps}>
+      {children}
+    </button>
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { getCartItemsLength, getTotal } from '../reducers'
+import { getCartItemsLength } from '../reducers'
 
 import { toggleCartVisibility } from '../actions'
 
@@ -12,7 +12,7 @@ import {
   Header,
 } from '../components'
 
-const CartHeader = ({ productCount, toggleCartVisibility }) => {
+const ShopHeader = ({ productCount, toggleCartVisibility }) => {
   return (
     <Header heading="Acme Store">
       <Link onClick={toggleCartVisibility} disabled={productCount <= 0}>
@@ -23,7 +23,7 @@ const CartHeader = ({ productCount, toggleCartVisibility }) => {
   )
 }
 
-CartHeader.propTypes = {
+ShopHeader.propTypes = {
   productCount: PropTypes.number.isRequired,
   toggleCartVisibility: PropTypes.func.isRequired,
 }
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   { toggleCartVisibility }
-)(CartHeader)
+)(ShopHeader)

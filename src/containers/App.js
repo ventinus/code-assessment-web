@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 
 import {
-  CartHeader,
+  ShopHeader,
   ProductsContainer,
   CartContainer,
 } from '.'
@@ -22,7 +22,7 @@ class App extends PureComponent {
   render() {
     return (
       <PageWrapper>
-        <CartHeader />
+        <ShopHeader />
         <ProductsContainer />
         <CartContainer />
       </PageWrapper>

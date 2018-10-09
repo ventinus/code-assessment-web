@@ -3,7 +3,8 @@
 
 %font-arial { font-family: $font-arial; }
 
-.type--grey-5 { color: $grey-5; }
+.type--block { display: block; }
+.type--grey-6 { color: $grey-6; }
 
 .type--a1,
 .type--a2,
@@ -74,6 +75,7 @@
 .type--a6 {
   @include font-size(16);
   @include letter-spacing(-20);
+  line-height: 1.4;
 
   @include breakpoint(md) {
     @include font-size(21);

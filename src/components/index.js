@@ -5,8 +5,12 @@ export {
   DecButton,
   IncButton
 } from './Button'
+
 export * from './Icon'
+
+export {default as BorderSection} from './BorderSection'
 export {default as Cart} from './Cart'
+export {default as CartProduct} from './CartProduct'
 export {default as Header} from './Header'
 export {default as Link} from './Link'
 export {default as Modal} from './Modal'
