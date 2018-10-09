@@ -14,9 +14,11 @@ export default ({ to, href, className, children, ...props }) => {
     className: `link type--a8 ${className ? className : ''}`
   }
 
-  return hasPresence(to) ? (
-    <RouterLink to={to} {...allProps}>{children}</RouterLink>
-  ) : (
-    <a href={href} {...allProps}>{children}</a>
-  )
+  if (hasPresence(to)) {
+    return <RouterLink to={to} {...allProps}>{children}</RouterLink>
+  } else if (hasPresence(href)) {
+    return <a href={href} {...allProps}>{children}</a>
+  } else {
+    return <button type="button" {...allProps}>{children}</button>
+  }
 }
