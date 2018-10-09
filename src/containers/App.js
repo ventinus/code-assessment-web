@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
+import { connect } from 'react-redux'
 
 import {
   CartHeader,
@@ -12,10 +13,25 @@ import {
 
 import '../scss/global.css'
 
-export default () => (
-  <PageWrapper>
-    <CartHeader />
-    <ProductsContainer />
-    <CartContainer />
-  </PageWrapper>
-)
+class App extends PureComponent {
+  componentWillReceiveProps(nextProps) {
+    const method = nextProps.cartVisible ? 'add' : 'remove'
+    document.documentElement.classList[method]('no-scroll')
+  }
+
+  render() {
+    return (
+      <PageWrapper>
+        <CartHeader />
+        <ProductsContainer />
+        <CartContainer />
+      </PageWrapper>
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  cartVisible: state.cart.visible
+})
+
+export default connect(mapStateToProps)(App)

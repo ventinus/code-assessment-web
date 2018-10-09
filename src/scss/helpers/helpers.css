@@ -18,6 +18,5 @@
   transform: rotate(-90deg) translateY(100%);
   transform-origin: bottom left; }
 
-html.no-scroll,
-html.no-scroll body {
+html.no-scroll {
   overflow: hidden; }
