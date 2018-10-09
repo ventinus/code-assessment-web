@@ -23,14 +23,11 @@ const Cart = props => {
 
 const CartProducts = ({ products, total, onCheckoutClicked }) => (
   <div>
-    {products.map(product =>
-      <CartProduct
-        title={product.title}
-        price={product.price}
-        quantity={product.quantity}
-        key={product.id}
-      />
-    )}
+    <ul className="cart__products">
+      {products.map(product =>
+        <CartProduct {...product} key={product.id} />
+      )}
+    </ul>
 
     <BorderSection tag="table" className="cart__breakdown type--a8" side="top">
       <tbody>

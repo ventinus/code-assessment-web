@@ -7,9 +7,7 @@ import './ProductItem.css'
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <li className='product-item'>
     <Product
-      title={product.title}
-      price={product.price}
-      inventory={product.inventory}
+      {...product}
       onAddToCartClicked={onAddToCartClicked} />
   </li>
 )

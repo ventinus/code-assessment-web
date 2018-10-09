@@ -5,13 +5,13 @@ import {
   PrimaryButton,
 } from '..'
 
-import img from '../../assets/images/chronograph.png'
-
 import './Product.css'
 
-const Product = ({ price, inventory, title, onAddToCartClicked }) => (
+const imageSrc = file => require(`../../assets/images/${file}`)
+
+const Product = ({ price, inventory, title, src, onAddToCartClicked }) => (
   <article className="product">
-    <img src={img} alt="" className="product__img"/>
+    <img src={imageSrc(src)} alt="" className="product__img"/>
     <div className="product__body">
       <div className="product__body__info">
         <h2 className="type--a3">{title}</h2>
