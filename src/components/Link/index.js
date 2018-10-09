@@ -5,18 +5,18 @@ import {hasPresence} from '../../helpers'
 
 import './Link.css'
 
-const RouterLink = ({ to, ...props }) => <a href={to} {...props} />
+const RouterLink = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 
 // if routes were needed, this component would handle which to use to link to the path
-export default ({ to, href, className, ...props }) => {
+export default ({ to, href, className, children, ...props }) => {
   const allProps = {
     ...props,
     className: `link type--a8 ${className ? className : ''}`
   }
 
   return hasPresence(to) ? (
-    <RouterLink to={to} {...allProps} />
+    <RouterLink to={to} {...allProps}>{children}</RouterLink>
   ) : (
-    <a href={href} {...allProps} />
+    <a href={href} {...allProps}>{children}</a>
   )
 }

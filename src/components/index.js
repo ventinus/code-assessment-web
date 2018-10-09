@@ -5,6 +5,7 @@ export {
   DecButton,
   IncButton
 } from './Button'
+export * from './Icon'
 export {default as Cart} from './Cart'
 export {default as Link} from './Link'
 export {default as Product} from './Product'

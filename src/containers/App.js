@@ -9,7 +9,8 @@ import {
   SecondaryAltButton,
   DecButton,
   IncButton,
-  Link
+  Link,
+  CartIcon
 } from '../components'
 
 import '../scss/global.css'
@@ -24,7 +25,7 @@ const App = () => {
         <IncButton onClick={() => console.log('second')} text="Decrement" />
         <PrimaryButton onClick={() => console.log('first')} disabled>Add to Cart</PrimaryButton>
       </div>
-      <Link href="/">go here</Link>
+      <Link href="/"><CartIcon />go here</Link>
       <p className="type--a1">Lorem ipsum dolor sit amet.</p>
       <p className="type--a2">Lorem ipsum dolor sit amet.</p>
       <p className="type--a3">Lorem ipsum dolor sit amet.</p>
