@@ -8,6 +8,10 @@ import {
   PrimaryButton,
 } from '..'
 
+import { SALES_TAX } from '../../constants/settings'
+
+import { toMoney } from '../../helpers'
+
 import './Cart.css'
 
 const Cart = props => {
@@ -28,41 +32,43 @@ const CartProducts = ({
   onRemoveFromCartClicked,
   onRemoveAllFromCartClicked,
   onCheckoutClicked,
-}) => (
-  <div>
-    <ul className="cart__products">
-      {products.map(product =>
-        <CartProduct
-          {...product}
-          onAddToCartClicked={onAddToCartClicked}
-          onRemoveFromCartClicked={onRemoveFromCartClicked}
-          onRemoveAllFromCartClicked={onRemoveAllFromCartClicked}
-          key={product.id} />
-      )}
-    </ul>
+}) => {
+  return (
+    <div>
+      <ul className="cart__products">
+        {products.map(product =>
+          <CartProduct
+            {...product}
+            onAddToCartClicked={onAddToCartClicked}
+            onRemoveFromCartClicked={onRemoveFromCartClicked}
+            onRemoveAllFromCartClicked={onRemoveAllFromCartClicked}
+            key={product.id} />
+        )}
+      </ul>
 
-    <BorderSection tag="table" className="cart__breakdown type--a8" side="top">
-      <tbody>
-        <tr>
-          <td className="cart__breakdown__label">Subtotal</td>
-          <td className="cart__breakdown__value">&#36;1000</td>
-        </tr>
-        <tr>
-          <td className="cart__breakdown__label">Taxes</td>
-          <td className="cart__breakdown__value">&#36;10.40</td>
-        </tr>
-        <BorderSection tag="tr" side="top">
-          <td className="cart__breakdown__label">Total</td>
-          <td className="cart__breakdown__value">&#36;{total}</td>
-        </BorderSection>
-      </tbody>
-    </BorderSection>
+      <BorderSection tag="table" className="cart__breakdown type--a8" side="top">
+        <tbody>
+          <tr>
+            <td className="cart__breakdown__label">Subtotal</td>
+            <td className="cart__breakdown__value">{toMoney(total)}</td>
+          </tr>
+          <tr>
+            <td className="cart__breakdown__label">Taxes</td>
+            <td className="cart__breakdown__value">{toMoney(total * SALES_TAX)}</td>
+          </tr>
+          <BorderSection tag="tr" side="top">
+            <td className="cart__breakdown__label">Total</td>
+            <td className="cart__breakdown__value">{toMoney(total + total * SALES_TAX)}</td>
+          </BorderSection>
+        </tbody>
+      </BorderSection>
 
-    <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked}>
-      Checkout
-    </PrimaryButton>
-  </div>
-)
+      <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked}>
+        Checkout
+      </PrimaryButton>
+    </div>
+  )
+}
 
 const NoProducts = (
   <div className="cart__no-products">
@@ -73,7 +79,7 @@ const NoProducts = (
 
 Cart.propTypes = {
   products: PropTypes.array,
-  total: PropTypes.string,
+  total: PropTypes.number,
   onCheckoutClicked: PropTypes.func
 }
 

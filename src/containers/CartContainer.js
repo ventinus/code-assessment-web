@@ -42,7 +42,7 @@ CartContainer.propTypes = {
     price: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired
   })).isRequired,
-  total: PropTypes.string,
+  total: PropTypes.number,
   checkout: PropTypes.func.isRequired,
   toggleCartVisibility: PropTypes.func.isRequired,
   cartVisible: PropTypes.bool.isRequired
@@ -50,7 +50,7 @@ CartContainer.propTypes = {
 
 const mapStateToProps = (state) => ({
   products: getCartProducts(state),
-  total: getTotal(state),
+  total: parseFloat(getTotal(state)),
   cartVisible: state.cart.visible,
 })
 
