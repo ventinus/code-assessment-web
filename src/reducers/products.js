@@ -6,6 +6,21 @@ import {
   REMOVE_ALL_FROM_CART,
 } from '../constants/ActionTypes'
 
+const normalizeProduct = ({
+  productTitle,
+  price,
+  ...rest
+}) => ({
+  ...rest,
+  price: price.value,
+  currency: price.currency,
+  title: productTitle,
+  img: {
+    src: require(`../assets/images/${productTitle.toLowerCase()}.jpg`),
+    alt: `${productTitle} watch`,
+  },
+})
+
 const products = (state, action) => {
   switch (action.type) {
     case ADD_TO_CART:
@@ -33,10 +48,10 @@ const byId = (state = {}, action) => {
     case RECEIVE_PRODUCTS:
       return {
         ...state,
-        ...action.products.reduce((obj, product) => {
-          obj[product.id] = product
-          return obj
-        }, {})
+        ...action.products.reduce((obj, product) => ({
+          ...obj,
+          [product.id]: normalizeProduct(product)
+        }), {})
       }
     default:
       const { productId } = action

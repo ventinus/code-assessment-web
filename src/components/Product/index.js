@@ -9,15 +9,20 @@ import { toMoney } from '../../helpers'
 
 import './Product.css'
 
-const imageSrc = file => require(`../../assets/images/${file}`)
-
-const Product = ({ price, inventory, title, src, onAddToCartClicked }) => (
+const Product = ({
+  img = {},
+  price,
+  currency,
+  inventory,
+  title,
+  onAddToCartClicked,
+}) => (
   <article className="product">
-    <img src={imageSrc(src)} alt="" className="product__img"/>
+    <img src={img.src} alt={img.alt} className="product__img"/>
     <div className="product__body">
       <div className="product__body__info">
         <h2 className="type--a3">{title}</h2>
-        <p className="type--a4">{toMoney(price)}</p>
+        <p className="type--a4">{toMoney(price, currency)}</p>
       </div>
       <p className="product__body__inventory type--a9 type--grey-6">{inventory || 'None'} remaining</p>
 

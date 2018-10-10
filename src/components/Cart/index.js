@@ -15,16 +15,14 @@ import { toMoney } from '../../helpers'
 
 import './Cart.css'
 
-const Cart = props => {
-  return (
-    <div className="cart">
-      <Header heading="Your Cart" />
-      {props.products.length > 0
-        ? cartProducts(props)
-        : noProducts}
-    </div>
-  )
-}
+const Cart = props => (
+  <div className="cart">
+    <Header heading="Your Cart" />
+    {props.products.length > 0
+      ? cartProducts(props)
+      : noProducts}
+  </div>
+)
 
 const cartProducts = ({
   products,
@@ -44,7 +42,6 @@ const cartProducts = ({
           onRemoveAllFromCartClicked={onRemoveAllFromCartClicked}
           key={product.id} />
       )}
-
     </ul>
   ),
   table: (
