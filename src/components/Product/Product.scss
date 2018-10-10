@@ -47,6 +47,7 @@
 
 .product__body__inventory {
   margin-top: 8px;
+  text-transform: uppercase;
 
   @include breakpoint(lg) {
     margin-top: 16px;

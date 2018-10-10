@@ -35,7 +35,8 @@
   width: 100%; }
 
 .product__body__inventory {
-  margin-top: 8px; }
+  margin-top: 8px;
+  text-transform: uppercase; }
   @media (min-width: 1024px) {
     .product__body__inventory {
       margin-top: 16px; } }

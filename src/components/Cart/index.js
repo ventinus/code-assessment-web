@@ -1,4 +1,5 @@
 import React from 'react'
+import createFragment from 'react-addons-create-fragment'
 import PropTypes from 'prop-types'
 import {
   CartProduct,
@@ -19,21 +20,21 @@ const Cart = props => {
     <div className="cart">
       <Header heading="Your Cart" />
       {props.products.length > 0
-        ? <CartProducts {...props} />
-        : NoProducts}
+        ? cartProducts(props)
+        : noProducts}
     </div>
   )
 }
 
-const CartProducts = ({
+const cartProducts = ({
   products,
   total,
   onAddToCartClicked,
   onRemoveFromCartClicked,
   onRemoveAllFromCartClicked,
   onCheckoutClicked,
-}) => (
-  <div style={{paddingBottom: 80, position: 'relative'}}>
+}) => createFragment({
+  list: (
     <ul className="cart__products">
       {products.map(product =>
         <CartProduct
@@ -43,9 +44,11 @@ const CartProducts = ({
           onRemoveAllFromCartClicked={onRemoveAllFromCartClicked}
           key={product.id} />
       )}
-    </ul>
 
-    <BorderSection tag="table" className="cart__breakdown type--a8" side="top">
+    </ul>
+  ),
+  table: (
+    <BorderSection tag="table" className="cart__breakdown type--a8" side="top" style={{marginBottom: 80}}>
       <tbody>
         <tr>
           <td className="cart__breakdown__label">Subtotal</td>
@@ -61,14 +64,16 @@ const CartProducts = ({
         </BorderSection>
       </tbody>
     </BorderSection>
-
+  ),
+  checkout: (
     <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked}>
       Checkout
     </PrimaryButton>
-  </div>
-)
+  ),
+})
 
-const NoProducts = (
+
+const noProducts = (
   <div className="cart__no-products">
     <EmptyCartIcon />
     <p className="cart__no-products__copy type--a6 type--block">Please add some products to your cart.</p>
