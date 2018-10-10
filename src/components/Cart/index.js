@@ -33,7 +33,7 @@ const CartProducts = ({
   onRemoveAllFromCartClicked,
   onCheckoutClicked,
 }) => (
-  <div>
+  <div style={{paddingBottom: 80, position: 'relative'}}>
     <ul className="cart__products">
       {products.map(product =>
         <CartProduct

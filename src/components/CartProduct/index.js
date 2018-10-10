@@ -24,7 +24,7 @@ export default ({
 }) => (
   <li className="cart-product">
     <div className="cart-product__info">
-      <img src={imageSrc(src)} />
+      <img src={imageSrc(src)} alt="" />
       <div className="cart-product__info__details">
         <h2 className="type--a7">{title}</h2>
         <p className="type--a8" style={{marginTop: 5}}>{toMoney(price)}</p>
