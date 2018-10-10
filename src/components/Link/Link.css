@@ -1,9 +1,0 @@
-.link {
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  color: #292929; }
-  .link.disabled {
-    opacity: 0.5;
-    pointer-events: none; }
-  .link:not(.disabled):hover {
-    color: #407FC0; }

@@ -1,8 +1,0 @@
-.products-list {
-  margin-top: 20px; }
-  @media (min-width: 768px) {
-    .products-list {
-      margin-top: 25px; } }
-  @media (min-width: 1024px) {
-    .products-list {
-      margin-top: 30px; } }
