@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product component renders correctly 1`] = `
+<article
+  className="product"
+>
+  <img
+    className="product__img"
+  />
+  <div
+    className="product__body"
+  >
+    <div
+      className="product__body__info"
+    >
+      <h2
+        className="type--a3"
+      >
+        Test Product
+      </h2>
+      <p
+        className="type--a4"
+      >
+        $9.99
+      </p>
+    </div>
+    <p
+      className="product__body__inventory type--a9 type--grey-6"
+    >
+      6
+       remaining
+    </p>
+    <button
+      className="button type--a8  button--primary product__body__btn"
+      disabled=""
+      onClick={[Function]}
+      type="button"
+    >
+      Add to cart
+    </button>
+  </div>
+</article>
+`;
