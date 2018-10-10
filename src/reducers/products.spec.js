@@ -1,5 +1,7 @@
 import reducer, * as products from './products'
 
+// TODO: handle REMOVE_FROM_CART action
+
 describe('reducers', () => {
   describe('products', () => {
     let state
@@ -13,12 +15,20 @@ describe('reducers', () => {
             {
               id: 1,
               productTitle: 'Product 1',
-              inventory: 2
+              inventory: 2,
+              price: {
+                value: 10,
+                currency: 'USD'
+              }
             },
             {
               id: 2,
               productTitle: 'Product 2',
-              inventory: 1
+              inventory: 1,
+              price: {
+                value: 10,
+                currency: 'USD'
+              }
             }
           ]
         })
@@ -26,14 +36,26 @@ describe('reducers', () => {
 
       it('contains the products from the action', () => {
         expect(products.getProduct(state, 1)).toEqual({
+          currency: "USD",
           id: 1,
-          title: 'Product 1',
-            inventory: 2
+          img: {
+            alt: "Product 1 watch",
+            src: "test-file-stub"
+          },
+          inventory: 2,
+          price: 10,
+          title: "Product 1"
         })
         expect(products.getProduct(state, 2)).toEqual({
+          currency: "USD",
           id: 2,
-          title: 'Product 2',
-            inventory: 1
+          img: {
+            alt: "Product 2 watch",
+            src: "test-file-stub"
+          },
+          inventory: 1,
+          price: 10,
+          title: "Product 2"
         })
       })
 
@@ -44,13 +66,25 @@ describe('reducers', () => {
       it('lists all of the products as visible', () => {
         expect(products.getVisibleProducts(state)).toEqual([
           {
+            currency: "USD",
             id: 1,
-            title: 'Product 1',
-            inventory: 2
+            img: {
+              alt: "Product 1 watch",
+              src: "test-file-stub"
+            },
+            inventory: 2,
+            price: 10,
+            title: "Product 1"
           }, {
+            currency: "USD",
             id: 2,
-            title: 'Product 2',
-            inventory: 1
+            img: {
+              alt: "Product 2 watch",
+              src: "test-file-stub"
+            },
+            inventory: 1,
+            price: 10,
+            title: "Product 2"
           }
         ])
       })
@@ -64,14 +98,26 @@ describe('reducers', () => {
         it('the inventory is reduced', () => {
           expect(products.getVisibleProducts(state)).toEqual([
             {
-              id: 1,
-              title: 'Product 1',
-              inventory: 1
-            }, {
-              id: 2,
-              title: 'Product 2',
-              inventory: 1
-            }
+            currency: "USD",
+            id: 1,
+            img: {
+              alt: "Product 1 watch",
+              src: "test-file-stub"
+            },
+            inventory: 1,
+            price: 10,
+            title: "Product 1"
+          }, {
+            currency: "USD",
+            id: 2,
+            img: {
+              alt: "Product 2 watch",
+              src: "test-file-stub"
+            },
+            inventory: 1,
+            price: 10,
+            title: "Product 2"
+          }
           ])
         })
 
