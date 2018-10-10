@@ -79,7 +79,7 @@ const noProducts = (
 
 Cart.propTypes = {
   products: PropTypes.array,
-  total: PropTypes.string,
+  total: PropTypes.number,
   onCheckoutClicked: PropTypes.func
 }
 
