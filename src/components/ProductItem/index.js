@@ -16,7 +16,9 @@ ProductItem.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
+    inventory: PropTypes.number.isRequired,
+    img: PropTypes.object,
+    currency: PropTypes.string,
   }).isRequired,
   onAddToCartClicked: PropTypes.func.isRequired
 }
