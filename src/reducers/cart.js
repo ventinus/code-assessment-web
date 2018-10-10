@@ -1,3 +1,5 @@
+import omit from 'lodash.omit'
+
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
@@ -38,10 +40,14 @@ const quantityById = (state = initialState.quantityById, action) => {
         [productId]: (state[productId] || 0) + 1
       }
     case REMOVE_FROM_CART:
-      return {
-        ...state,
-        [productId]: Math.max(action.nextQuantity, 0)
+      if (!state[productId]) {
+        return state
       }
+
+      return action.nextQuantity > 0 ? {
+        ...state,
+        [productId]: action.nextQuantity
+      } : omit(state, productId)
     default:
       return state
   }
