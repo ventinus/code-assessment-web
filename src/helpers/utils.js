@@ -1,3 +1,5 @@
+import { SALES_TAX } from '../constants/settings'
+
 export const hasPresence = item => {
   switch (typeof item) {
     case 'number':
@@ -29,3 +31,8 @@ export const removeFromArr = (arr, val) => {
     ...arr.slice(index + 1)
   ]
 }
+
+export const addSalesTax = n => ({
+  tax: (n * SALES_TAX).toFixed(2),
+  total: (n + n * SALES_TAX).toFixed(2),
+})

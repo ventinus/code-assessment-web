@@ -8,9 +8,10 @@ import {
   PrimaryButton,
 } from '..'
 
-import { SALES_TAX } from '../../constants/settings'
-
-import { toMoney } from '../../helpers'
+import {
+  toMoney,
+  addSalesTax
+} from '../../helpers'
 
 import './Cart.css'
 
@@ -50,11 +51,11 @@ const cartProducts = ({
         </tr>
         <tr>
           <td className="cart__breakdown__label">Taxes</td>
-          <td className="cart__breakdown__value">{toMoney(total * SALES_TAX)}</td>
+          <td className="cart__breakdown__value">{toMoney(addSalesTax(total).tax)}</td>
         </tr>
         <BorderSection tag="tr" side="top">
           <td className="cart__breakdown__label">Total</td>
-          <td className="cart__breakdown__value">{toMoney(total + total * SALES_TAX)}</td>
+          <td className="cart__breakdown__value">{toMoney(addSalesTax(total).total)}</td>
         </BorderSection>
       </tbody>
     </BorderSection>
@@ -75,7 +76,11 @@ const noProducts = (
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.number,
-  onCheckoutClicked: PropTypes.func
+  onCheckoutClicked: PropTypes.func,
+  onAddToCartClicked: PropTypes.func,
+  onRemoveFromCartClicked: PropTypes.func,
+  onRemoveAllFromCartClicked: PropTypes.func,
+  onCheckoutClicked: PropTypes.func,
 }
 
 export default Cart

@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart component renders correctly with no products 1`] = `
+<div
+  className="cart"
+>
+  <div
+    className="border-section header"
+    style={
+      Object {
+        "borderBottomWidth": 1,
+      }
+    }
+  >
+    <h1
+      className="type--a1"
+    >
+      Your Cart
+    </h1>
+  </div>
+  <div
+    className="cart__no-products"
+  >
+    <i
+      className="icon icon--cart icon--15 icon--empty-cart"
+    />
+    <em
+      className="cart__no-products__copy type--a6 type--block"
+    >
+      Please add some products to your cart.
+    </em>
+  </div>
+</div>
+`;
+
+exports[`Cart component when given product renders correctly with products 1`] = `
+<div
+  className="cart"
+>
+  <div
+    className="border-section header"
+    style={
+      Object {
+        "borderBottomWidth": 1,
+      }
+    }
+  >
+    <h1
+      className="type--a1"
+    >
+      Your Cart
+    </h1>
+  </div>
+  <ul
+    className="cart__products"
+  >
+    <li
+      className="cart-product"
+    >
+      <div
+        className="cart-product__info"
+      >
+        <img />
+        <div
+          className="cart-product__info__details"
+        >
+          <h2
+            className="type--a7"
+          >
+            Product 1
+          </h2>
+          <p
+            className="type--a8"
+            style={
+              Object {
+                "marginTop": 5,
+              }
+            }
+          >
+            $10.00
+          </p>
+          <button
+            className="cart-product__info__details__remove-btn type--a8"
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+      <div
+        className="cart-product__quantity"
+      >
+        <button
+          className="button type--a8  button--secondary button--dec"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+        <span
+          className="cart-product__quantity__value type--a8"
+        >
+          2
+        </span>
+        <button
+          className="button type--a8  button--secondary-alt button--inc"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+      </div>
+    </li>
+    <li
+      className="cart-product"
+    >
+      <div
+        className="cart-product__info"
+      >
+        <img />
+        <div
+          className="cart-product__info__details"
+        >
+          <h2
+            className="type--a7"
+          >
+            Product 2
+          </h2>
+          <p
+            className="type--a8"
+            style={
+              Object {
+                "marginTop": 5,
+              }
+            }
+          >
+            $10.00
+          </p>
+          <button
+            className="cart-product__info__details__remove-btn type--a8"
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+      <div
+        className="cart-product__quantity"
+      >
+        <button
+          className="button type--a8  button--secondary button--dec"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+        <span
+          className="cart-product__quantity__value type--a8"
+        >
+          2
+        </span>
+        <button
+          className="button type--a8  button--secondary-alt button--inc"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+      </div>
+    </li>
+    <li
+      className="cart-product"
+    >
+      <div
+        className="cart-product__info"
+      >
+        <img />
+        <div
+          className="cart-product__info__details"
+        >
+          <h2
+            className="type--a7"
+          >
+            Product 3
+          </h2>
+          <p
+            className="type--a8"
+            style={
+              Object {
+                "marginTop": 5,
+              }
+            }
+          >
+            $10.00
+          </p>
+          <button
+            className="cart-product__info__details__remove-btn type--a8"
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+      <div
+        className="cart-product__quantity"
+      >
+        <button
+          className="button type--a8  button--secondary button--dec"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+        <span
+          className="cart-product__quantity__value type--a8"
+        >
+          2
+        </span>
+        <button
+          className="button type--a8  button--secondary-alt button--inc"
+          disabled=""
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="is-visually-hidden"
+          />
+        </button>
+      </div>
+    </li>
+  </ul>
+  <table
+    className="border-section cart__breakdown type--a8"
+    style={
+      Object {
+        "borderTopWidth": 1,
+        "marginBottom": 80,
+      }
+    }
+  >
+    <tbody>
+      <tr>
+        <td
+          className="cart__breakdown__label"
+        >
+          Subtotal
+        </td>
+        <td
+          className="cart__breakdown__value"
+        >
+          $76.00
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="cart__breakdown__label"
+        >
+          Taxes
+        </td>
+        <td
+          className="cart__breakdown__value"
+        >
+          $3.80
+        </td>
+      </tr>
+      <tr
+        className="border-section "
+        style={
+          Object {
+            "borderTopWidth": 1,
+          }
+        }
+      >
+        <td
+          className="cart__breakdown__label"
+        >
+          Total
+        </td>
+        <td
+          className="cart__breakdown__value"
+        >
+          $79.80
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    className="button type--a8  button--primary cart__checkout-btn"
+    disabled=""
+    onClick={[Function]}
+    type="button"
+  >
+    Checkout
+  </button>
+</div>
+`;

@@ -3,7 +3,6 @@ import {
   RECEIVE_PRODUCTS,
   ADD_TO_CART,
   REMOVE_FROM_CART,
-
 } from '../constants/ActionTypes'
 
 export const normalizeProduct = ({
