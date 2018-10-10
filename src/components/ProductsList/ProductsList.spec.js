@@ -9,7 +9,6 @@ const setup = props => {
   )
 
   return {
-    component: component,
     children: component.children().at(0),
   }
 }
