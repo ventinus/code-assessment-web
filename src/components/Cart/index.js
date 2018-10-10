@@ -1,5 +1,4 @@
-import React from 'react'
-import createFragment from 'react-addons-create-fragment'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import {
   CartProduct,
@@ -31,8 +30,8 @@ const cartProducts = ({
   onRemoveFromCartClicked,
   onRemoveAllFromCartClicked,
   onCheckoutClicked,
-}) => createFragment({
-  list: (
+}) => (
+  <Fragment>
     <ul className="cart__products">
       {products.map(product =>
         <CartProduct
@@ -43,8 +42,6 @@ const cartProducts = ({
           key={product.id} />
       )}
     </ul>
-  ),
-  table: (
     <BorderSection tag="table" className="cart__breakdown type--a8" side="top" style={{marginBottom: 80}}>
       <tbody>
         <tr>
@@ -61,13 +58,11 @@ const cartProducts = ({
         </BorderSection>
       </tbody>
     </BorderSection>
-  ),
-  checkout: (
     <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked}>
       Checkout
     </PrimaryButton>
-  ),
-})
+  </Fragment>
+)
 
 
 const noProducts = (
