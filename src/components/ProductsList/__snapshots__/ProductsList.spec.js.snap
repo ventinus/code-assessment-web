@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList component renders correctly 1`] = `
+<ul
+  className="products-list"
+>
+  Test Children
+</ul>
+`;
