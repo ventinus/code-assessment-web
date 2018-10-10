@@ -19,7 +19,6 @@ export default ({
   inventory,
   onAddToCartClicked,
   onRemoveFromCartClicked,
-  onRemoveAllFromCartClicked,
 }) => (
   <li className="cart-product">
     <div className="cart-product__info">
@@ -30,7 +29,7 @@ export default ({
         <button
           className="cart-product__info__details__remove-btn type--a8"
           type="button"
-          onClick={() => onRemoveAllFromCartClicked(id)}>
+          onClick={() => onRemoveFromCartClicked(id, quantity)}>
           Remove
         </button>
       </div>

@@ -6,7 +6,6 @@ import {
   toggleCartVisibility,
   addToCart,
   removeFromCart,
-  removeAllFromCart,
 } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import {
@@ -22,7 +21,6 @@ const CartContainer = ({
   cartVisible,
   addToCart,
   removeFromCart,
-  removeAllFromCart,
 }) => (
   <Modal toggleModal={toggleCartVisibility} isOpen={cartVisible}>
     <Cart
@@ -30,7 +28,6 @@ const CartContainer = ({
       total={total}
       onAddToCartClicked={addToCart}
       onRemoveFromCartClicked={removeFromCart}
-      onRemoveAllFromCartClicked={removeAllFromCart}
       onCheckoutClicked={() => checkout(products)} />
   </Modal>
 )
@@ -61,6 +58,5 @@ export default connect(
     toggleCartVisibility,
     addToCart,
     removeFromCart,
-    removeAllFromCart,
   }
 )(CartContainer)

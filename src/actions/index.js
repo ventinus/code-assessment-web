@@ -17,16 +17,11 @@ const addToCartUnsafe = productId => ({
   productId
 })
 
-const removeFromCartUnsafe = (productId, count) => ({
+const removeFromCartUnsafe = (productId, quantity, change) => ({
   type: types.REMOVE_FROM_CART,
+  nextQuantity: quantity - change,
+  change,
   productId,
-  count
-})
-
-const removeAllFromCartUnsafe = (productId, change) => ({
-  type: types.REMOVE_ALL_FROM_CART,
-  productId,
-  change
 })
 
 export const addToCart = productId => (dispatch, getState) => {
@@ -35,16 +30,10 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
-export const removeFromCart = productId => (dispatch, getState) => {
+export const removeFromCart = (productId, change = 1) => (dispatch, getState) => {
   const quantity = getState().cart.quantityById[productId]
   if (quantity > 0) {
-    dispatch(removeFromCartUnsafe(productId, quantity))
-  }
-}
-export const removeAllFromCart = productId => (dispatch, getState) => {
-  const quantity = getState().cart.quantityById[productId]
-  if (quantity > 0) {
-    dispatch(removeAllFromCartUnsafe(productId, quantity))
+    dispatch(removeFromCartUnsafe(productId, quantity, change))
   }
 }
 

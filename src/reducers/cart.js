@@ -1,7 +1,6 @@
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
-  REMOVE_ALL_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE,
   TOGGLE_CART_VISIBILITY,
@@ -24,9 +23,7 @@ const addedIds = (state = initialState.addedIds, action) => {
       }
       return [ ...state, productId ]
     case REMOVE_FROM_CART:
-      return action.count <= 1 ? removeFromArr(state, productId) : state
-    case REMOVE_ALL_FROM_CART:
-      return removeFromArr(state, productId)
+      return action.nextQuantity < 1 ? removeFromArr(state, productId) : state
     default:
       return state
   }
@@ -43,12 +40,7 @@ const quantityById = (state = initialState.quantityById, action) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        [productId]: Math.max(state[productId] - 1, 0)
-      }
-    case REMOVE_ALL_FROM_CART:
-      return {
-        ...state,
-        [productId]: 0
+        [productId]: Math.max(action.nextQuantity, 0)
       }
     default:
       return state
