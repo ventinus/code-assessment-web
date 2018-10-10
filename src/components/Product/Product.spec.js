@@ -33,7 +33,7 @@ const setup = (props = productFactory()) => {
 describe('Product component', () => {
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Product {...productFactory()} />)
+      .create(<Product {...productFactory()} onAddToCartClicked={jest.fn()} />)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })

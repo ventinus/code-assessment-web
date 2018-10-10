@@ -36,7 +36,13 @@ const Product = ({
 Product.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
-  title: PropTypes.string
+  title: PropTypes.string,
+  img: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string,
+  }),
+  currency: PropTypes.string,
+  onAddToCartClicked: PropTypes.func.isRequired,
 }
 
 export default Product
