@@ -4,7 +4,8 @@ describe('reducers', () => {
   describe('cart', () => {
     const initialState = {
       addedIds: [],
-      quantityById: {}
+      quantityById: {},
+      visible: false
     }
 
     it('should provide the initial state', () => {
@@ -22,7 +23,8 @@ describe('reducers', () => {
     it('should handle ADD_TO_CART action', () => {
       expect(cart(initialState, { type: 'ADD_TO_CART', productId: 1 })).toEqual({
         addedIds: [ 1 ],
-        quantityById: { 1: 1 }
+        quantityById: { 1: 1 },
+        visible: false
       })
     })
 
@@ -30,12 +32,14 @@ describe('reducers', () => {
       it('should handle ADD_TO_CART action', () => {
         const state = {
           addedIds: [ 1, 2 ],
-          quantityById: { 1: 1, 2: 1 }
+          quantityById: { 1: 1, 2: 1 },
+          visible: false
         }
 
         expect(cart(state, { type: 'ADD_TO_CART', productId: 2 })).toEqual({
           addedIds: [ 1, 2 ],
-          quantityById: { 1: 1, 2: 2 }
+          quantityById: { 1: 1, 2: 2 },
+          visible: false
         })
       })
     })

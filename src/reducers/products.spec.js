@@ -12,12 +12,12 @@ describe('reducers', () => {
           products: [
             {
               id: 1,
-              title: 'Product 1',
+              productTitle: 'Product 1',
               inventory: 2
             },
             {
               id: 2,
-              title: 'Product 2',
+              productTitle: 'Product 2',
               inventory: 1
             }
           ]

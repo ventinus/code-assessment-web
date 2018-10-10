@@ -1,23 +1,23 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import {Cart, Product} from '..'
+import { render } from 'enzyme'
+import { Cart, Product, PrimaryButton } from '..'
 
 const setup = (total, products = []) => {
   const actions = {
     onCheckoutClicked: jest.fn()
   }
 
-  const component = shallow(
+  const component = render(
     <Cart products={products} total={total} {...actions} />
   )
 
   return {
     component: component,
     actions: actions,
-    button: component.find('button'),
+    button: component.find('.cart__checkout-btn'),
     products: component.find(Product),
     em: component.find('em'),
-    p: component.find('p')
+    total: component.find('.total')
   }
 }
 
@@ -29,12 +29,12 @@ describe('Cart component', () => {
 
   it('should display add some products message', () => {
     const { em } = setup()
-    expect(em.text()).toMatch(/^Please add some products to cart/)
+    expect(em.text()).toMatch(/^Please add some products to your cart./)
   })
 
-  it('should disable button', () => {
+  it('should not render checkout button when no products selected', () => {
     const { button } = setup()
-    expect(button.prop('disabled')).toEqual('disabled')
+    expect(button.exists()).toEqual(false)
   })
 
   describe('when given product', () => {
@@ -60,7 +60,7 @@ describe('Cart component', () => {
 
     it('should not disable button', () => {
       const { button } = setup('9.99', product)
-      expect(button.prop('disabled')).toEqual('')
+      expect(button.exists()).toEqual('')
     })
 
     it('should call action on button click', () => {

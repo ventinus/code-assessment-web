@@ -6,6 +6,7 @@ export const Base = ({ onClick, children, type = 'button', className = '', disab
   <button
     className={`button type--a8 ${disabled ? 'disabled' : ''} ${className}`}
     type={type}
+    disabled={disabled ? 'disabled' : ''}
     onClick={() => !disabled && onClick()}>
     {children}
   </button>

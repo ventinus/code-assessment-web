@@ -73,13 +73,13 @@ const cartProducts = ({
 const noProducts = (
   <div className="cart__no-products">
     <EmptyCartIcon />
-    <p className="cart__no-products__copy type--a6 type--block">Please add some products to your cart.</p>
+    <em className="cart__no-products__copy type--a6 type--block">Please add some products to your cart.</em>
   </div>
 )
 
 Cart.propTypes = {
   products: PropTypes.array,
-  total: PropTypes.number,
+  total: PropTypes.string,
   onCheckoutClicked: PropTypes.func
 }
 
