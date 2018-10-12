@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartProduct component renders correctly 1`] = `
+<li
+  className="cart-product"
+>
+  <div
+    className="cart-product__info"
+  >
+    <img />
+    <div
+      className="cart-product__info__details"
+    >
+      <h2
+        className="type--a7"
+      />
+      <p
+        className="type--a8"
+        style={
+          Object {
+            "marginTop": 5,
+          }
+        }
+      >
+        $NaN
+      </p>
+      <button
+        className="cart-product__info__details__remove-btn type--a8"
+        onClick={[Function]}
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+  <div
+    className="cart-product__quantity"
+  >
+    <button
+      className="button type--a8  button--secondary button--dec"
+      disabled=""
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="is-visually-hidden"
+      >
+        Remove one item from the cart
+      </span>
+    </button>
+    <span
+      className="cart-product__quantity__value type--a8"
+    />
+    <button
+      className="button type--a8  button--secondary-alt button--inc"
+      disabled=""
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="is-visually-hidden"
+      >
+        Add one item to cart
+      </span>
+    </button>
+  </div>
+</li>
+`;

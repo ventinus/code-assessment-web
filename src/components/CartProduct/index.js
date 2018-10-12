@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   DecButton,
@@ -9,7 +10,7 @@ import { toMoney } from '../../helpers'
 
 import './CartProduct.css'
 
-export default ({
+const CartProduct = ({
   img = {},
   id,
   title,
@@ -40,8 +41,25 @@ export default ({
       </DecButton>
       <span className="cart-product__quantity__value type--a8">{quantity}</span>
       <IncButton onClick={() => onAddToCartClicked(id)} disabled={inventory <= 0} >
-        Add one item from to cart
+        Add one item to cart
       </IncButton>
     </div>
   </li>
 )
+
+CartProduct.propTypes = {
+  img: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string,
+  }),
+  id: PropTypes.number,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  currency: PropTypes.string,
+  quantity: PropTypes.number,
+  inventory: PropTypes.number,
+  onAddToCartClicked: PropTypes.func,
+  onRemoveFromCartClicked: PropTypes.func,
+}
+
+export default CartProduct

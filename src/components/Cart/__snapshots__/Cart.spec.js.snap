@@ -117,7 +117,7 @@ exports[`Cart component when given product renders correctly with products 1`] =
           <span
             className="is-visually-hidden"
           >
-            Add one item from to cart
+            Add one item to cart
           </span>
         </button>
       </div>
@@ -185,7 +185,7 @@ exports[`Cart component when given product renders correctly with products 1`] =
           <span
             className="is-visually-hidden"
           >
-            Add one item from to cart
+            Add one item to cart
           </span>
         </button>
       </div>
@@ -253,7 +253,7 @@ exports[`Cart component when given product renders correctly with products 1`] =
           <span
             className="is-visually-hidden"
           >
-            Add one item from to cart
+            Add one item to cart
           </span>
         </button>
       </div>
