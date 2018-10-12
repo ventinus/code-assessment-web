@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BorderSection component renders correctly 1`] = `
+<div
+  className="border-section "
+  style={
+    Object {
+      "borderBottomWidth": 1,
+    }
+  }
+>
+  children
+</div>
+`;
