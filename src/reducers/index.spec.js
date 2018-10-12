@@ -1,4 +1,4 @@
-import { getTotal, getCartProducts } from './index'
+import { getTotal, getCartProducts, getCartItemsLength } from './index'
 
 describe('selectors', () => {
   describe('getTotal', () => {
@@ -80,5 +80,21 @@ describe('selectors', () => {
         }
       ])
     })
+  })
+})
+
+describe('getCartItemsLength', () => {
+  it('should return how many items are in the cart', () => {
+    const state = {
+      cart: {
+        quantityById: {
+          1: 4,
+          2: 2,
+          3: 1
+        }
+      }
+    }
+
+    expect(getCartItemsLength(state)).toBe(7)
   })
 })
