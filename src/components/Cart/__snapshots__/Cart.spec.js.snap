@@ -99,7 +99,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Remove one item from the cart
+          </span>
         </button>
         <span
           className="cart-product__quantity__value type--a8"
@@ -114,7 +116,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Add one item from to cart
+          </span>
         </button>
       </div>
     </li>
@@ -163,7 +167,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Remove one item from the cart
+          </span>
         </button>
         <span
           className="cart-product__quantity__value type--a8"
@@ -178,7 +184,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Add one item from to cart
+          </span>
         </button>
       </div>
     </li>
@@ -227,7 +235,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Remove one item from the cart
+          </span>
         </button>
         <span
           className="cart-product__quantity__value type--a8"
@@ -242,7 +252,9 @@ exports[`Cart component when given product renders correctly with products 1`] =
         >
           <span
             className="is-visually-hidden"
-          />
+          >
+            Add one item from to cart
+          </span>
         </button>
       </div>
     </li>
