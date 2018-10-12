@@ -12,10 +12,10 @@ export default {
 
     const response = success ? {
       status: 200,
-      message: 'Products successfully bought'
+      message: 'Products successfully bought',
     } : {
       status: 503,
-      message: 'The server is unavailable'
+      message: 'The server is unavailable',
     }
 
     setTimeout(() => cb(response), 3000)

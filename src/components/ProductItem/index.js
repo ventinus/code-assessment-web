@@ -20,7 +20,7 @@ ProductItem.propTypes = {
     img: PropTypes.object,
     currency: PropTypes.string,
   }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+  onAddToCartClicked: PropTypes.func.isRequired,
 }
 
 export default ProductItem

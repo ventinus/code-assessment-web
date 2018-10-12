@@ -14,14 +14,13 @@
     max-height: 90vh;
     min-height: 70vh;
   }
+
   @include breakpoint(lg) {
     width: 780px;
   }
 }
 
-.cart__products {
-  padding: 20px 0;
-}
+.cart__products { padding: 20px 0; }
 
 .cart__no-products {
   text-align: center;
@@ -51,12 +50,10 @@
   td { padding-top: 20px; }
   tr:nth-last-child(2) td { padding-bottom: 20px; }
 }
-.cart__breakdown__label {
-  color: $grey-7;
-}
-.cart__breakdown__value {
-  text-align: right;
-}
+
+.cart__breakdown__label { color: $grey-7; }
+
+.cart__breakdown__value { text-align: right; }
 
 .cart__checkout-btn {
   width: calc(100% + 40px);

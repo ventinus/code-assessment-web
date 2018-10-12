@@ -13,7 +13,7 @@ const setup = ( props = {} ) => {
   return {
     component,
     toggleModal,
-    button: component.find('button')
+    button: component.find('button'),
   }
 }
 

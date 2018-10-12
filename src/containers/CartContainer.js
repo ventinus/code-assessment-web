@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+
 import {
   checkout,
   toggleCartVisibility,
   addToCart,
   removeFromCart,
 } from '../actions'
+
 import { getTotal, getCartProducts } from '../reducers'
+
 import {
   Cart,
   Modal,

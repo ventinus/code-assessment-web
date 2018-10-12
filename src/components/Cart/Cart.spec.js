@@ -27,7 +27,7 @@ const setup = (total, products = []) => {
     button: component.find('.cart__checkout-btn'),
     products: component.find(CartProduct),
     em: component.find('em'),
-    total: component.find('.cart__breakdown__value').get(0)
+    total: component.find('.cart__breakdown__value').get(0),
   }
 }
 

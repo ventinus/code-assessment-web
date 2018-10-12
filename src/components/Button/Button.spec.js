@@ -1,21 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
-import {
-  PrimaryButton,
-  SecondaryButton,
-  SecondaryAltButton,
-  DecButton,
-  IncButton
-} from '.'
+import * as btns from '.'
 
-const buttons = [
-  PrimaryButton,
-  SecondaryButton,
-  SecondaryAltButton,
-  DecButton,
-  IncButton
-]
+const buttons = Object.values(btns)
 
 const setup = (Comp, props) => {
   const component = mount(<Comp {...props}>Button Text</Comp>)

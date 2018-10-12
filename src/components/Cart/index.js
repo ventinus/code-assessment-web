@@ -20,9 +20,7 @@ const Cart = props => (
   <div className="cart">
     <Header heading="Your Cart" />
     <ErrorMessage style={{marginTop: 20}}>{props.errorMessage}</ErrorMessage>
-    {props.products.length > 0
-      ? cartProducts(props)
-      : noProducts}
+    {props.products.length > 0 ? cartProducts(props) : noProducts}
   </div>
 )
 

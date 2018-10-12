@@ -25,7 +25,6 @@ const Product = ({
         <p className="type--a4">{toMoney(price, currency)}</p>
       </div>
       <p className="product__body__inventory type--a9 type--grey-6">{inventory || 'None'} remaining</p>
-
       <PrimaryButton className="product__body__btn" onClick={onAddToCartClicked} disabled={!inventory}>
         {inventory > 0 ? 'Add to cart' : 'Sold Out'}
       </PrimaryButton>

@@ -36,11 +36,11 @@ const CartProduct = ({
       </div>
     </div>
     <div className="cart-product__quantity">
-      <DecButton onClick={() => onRemoveFromCartClicked(id)} >
+      <DecButton onClick={() => onRemoveFromCartClicked(id)}>
         Remove one item from the cart
       </DecButton>
       <span className="cart-product__quantity__value type--a8">{quantity}</span>
-      <IncButton onClick={() => onAddToCartClicked(id)} disabled={inventory <= 0} >
+      <IncButton onClick={() => onAddToCartClicked(id)} disabled={inventory <= 0}>
         Add one item to cart
       </IncButton>
     </div>
