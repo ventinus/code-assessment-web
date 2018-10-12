@@ -38,18 +38,20 @@ export const removeFromCart = (productId, change = 1) => (dispatch, getState) =>
 }
 
 export const checkout = products => (dispatch, getState) => {
-  const { cart } = getState()
-
   dispatch({
     type: types.CHECKOUT_REQUEST
   })
-  shop.buyProducts(products, () => {
-    dispatch({
-      type: types.CHECKOUT_SUCCESS,
-      cart
-    })
-    // Replace the line above with line below to rollback on failure:
-    // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+  shop.buyProducts(products, res => {
+    if (res.status === 200) {
+      dispatch({
+        type: types.CHECKOUT_SUCCESS
+      })
+    } else {
+      dispatch({
+        type: types.CHECKOUT_FAILURE,
+        error: res
+      })
+    }
   })
 }
 

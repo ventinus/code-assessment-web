@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component renders correctly with an error message 1`] = `
+<div
+  className="error-message"
+  style={Object {}}
+>
+  <p>
+    There was an issue completing checkout: 
+    There was an error
+  </p>
+</div>
+`;

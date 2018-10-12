@@ -6,6 +6,7 @@ import {
   EmptyCartIcon,
   BorderSection,
   PrimaryButton,
+  ErrorMessage,
 } from '..'
 
 import {
@@ -18,6 +19,7 @@ import './Cart.css'
 const Cart = props => (
   <div className="cart">
     <Header heading="Your Cart" />
+    <ErrorMessage style={{marginTop: 20}}>{props.errorMessage}</ErrorMessage>
     {props.products.length > 0
       ? cartProducts(props)
       : noProducts}
@@ -27,6 +29,7 @@ const Cart = props => (
 const cartProducts = ({
   products,
   total,
+  processingCheckout,
   onAddToCartClicked,
   onRemoveFromCartClicked,
   onRemoveAllFromCartClicked,
@@ -59,8 +62,8 @@ const cartProducts = ({
         </BorderSection>
       </tbody>
     </BorderSection>
-    <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked}>
-      Checkout
+    <PrimaryButton className="cart__checkout-btn" onClick={onCheckoutClicked} disabled={processingCheckout}>
+      {processingCheckout ? 'Processing...' : 'Checkout'}
     </PrimaryButton>
   </Fragment>
 )
@@ -76,11 +79,12 @@ const noProducts = (
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.number,
+  errorMessage: PropTypes.string,
+  processingCheckout: PropTypes.bool,
   onCheckoutClicked: PropTypes.func,
   onAddToCartClicked: PropTypes.func,
   onRemoveFromCartClicked: PropTypes.func,
   onRemoveAllFromCartClicked: PropTypes.func,
-  onCheckoutClicked: PropTypes.func,
 }
 
 export default Cart

@@ -21,6 +21,8 @@ const CartContainer = ({
   cartVisible,
   addToCart,
   removeFromCart,
+  errorMessage,
+  processingCheckout,
 }) => (
   <Modal toggleModal={toggleCartVisibility} isOpen={cartVisible}>
     <Cart
@@ -28,7 +30,9 @@ const CartContainer = ({
       total={total}
       onAddToCartClicked={addToCart}
       onRemoveFromCartClicked={removeFromCart}
-      onCheckoutClicked={() => checkout(products)} />
+      onCheckoutClicked={() => checkout(products)}
+      errorMessage={errorMessage}
+      processingCheckout={processingCheckout} />
   </Modal>
 )
 
@@ -42,13 +46,17 @@ CartContainer.propTypes = {
   total: PropTypes.number,
   checkout: PropTypes.func.isRequired,
   toggleCartVisibility: PropTypes.func.isRequired,
-  cartVisible: PropTypes.bool.isRequired
+  cartVisible: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string,
+  processingCheckout: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
   products: getCartProducts(state),
   total: parseFloat(getTotal(state)),
   cartVisible: state.cart.visible,
+  errorMessage: state.cart.error.message,
+  processingCheckout: state.cart.processing,
 })
 
 export default connect(

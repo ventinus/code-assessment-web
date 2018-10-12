@@ -5,6 +5,7 @@ import {
   REMOVE_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE,
+  CHECKOUT_SUCCESS,
   TOGGLE_CART_VISIBILITY,
 } from '../constants/ActionTypes'
 
@@ -14,6 +15,8 @@ const initialState = {
   addedIds: [],
   quantityById: {},
   visible: false,
+  processing: false,
+  error: {},
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -61,9 +64,18 @@ export const getAddedIds = state => state.addedIds
 const cart = (state = initialState, action) => {
   switch (action.type) {
     case CHECKOUT_REQUEST:
+      return {
+        ...state,
+        processing: true,
+      }
+    case CHECKOUT_SUCCESS:
       return initialState
     case CHECKOUT_FAILURE:
-      return action.cart
+      return {
+        ...state,
+        processing: false,
+        error: action.error,
+      }
     case TOGGLE_CART_VISIBILITY:
       return {
         ...state,
@@ -73,7 +85,9 @@ const cart = (state = initialState, action) => {
       return {
         addedIds: addedIds(state.addedIds, action),
         quantityById: quantityById(state.quantityById, action),
-        visible: state.visible
+        visible: state.visible,
+        error: state.error,
+        processing: state.processing,
       }
   }
 }

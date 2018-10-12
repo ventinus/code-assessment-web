@@ -1,0 +1,7 @@
+@import '../../scss/variables/mixins.scss';
+@import '../../scss/variables/variables.scss';
+
+.error-message {
+  background-color: $red-2;
+  padding: 10px 20px;
+}
