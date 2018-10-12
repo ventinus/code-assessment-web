@@ -1,6 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './PageWrapper.css'
 
-export default ({ children }) => <div className="page-wrapper">{children}</div>
+const PageWrapper = ({ children }) => <div className="page-wrapper">{children}</div>
+
+PageWrapper.propTypes = {
+  children: PropTypes.any
+}
+
+export default PageWrapper
 
