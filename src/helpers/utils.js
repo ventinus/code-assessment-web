@@ -26,7 +26,8 @@ export const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1).toLo
 
 export const removeFromArr = (arr, val) => {
   const index = arr.indexOf(val)
-  return [
+
+  return index < 0 ? arr : [
     ...arr.slice(0, index),
     ...arr.slice(index + 1)
   ]
