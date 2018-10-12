@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component renders CartIcon correctly 1`] = `
+<i
+  className="icon icon--cart icon--15 "
+/>
+`;
+
+exports[`Icon component renders EmptyCartIcon correctly 1`] = `
+<i
+  className="icon icon--cart icon--15 icon--empty-cart"
+/>
+`;
