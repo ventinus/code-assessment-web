@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders correctly 1`] = `
+<div
+  className="border-section header"
+  style={
+    Object {
+      "borderBottomWidth": 1,
+    }
+  }
+>
+  <h1
+    className="type--a1"
+  >
+    The Heading
+  </h1>
+  children
+</div>
+`;
