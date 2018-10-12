@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button components renders correctly DecButton 1`] = `
+<button
+  className="button type--a8  button--secondary button--dec"
+  disabled=""
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="is-visually-hidden"
+  >
+    children
+  </span>
+</button>
+`;
+
+exports[`Button components renders correctly IncButton 1`] = `
+<button
+  className="button type--a8  button--secondary-alt button--inc"
+  disabled=""
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="is-visually-hidden"
+  >
+    children
+  </span>
+</button>
+`;
+
+exports[`Button components renders correctly PrimaryButton 1`] = `
+<button
+  className="button type--a8  button--primary "
+  disabled=""
+  onClick={[Function]}
+  type="button"
+>
+  children
+</button>
+`;
+
+exports[`Button components renders correctly SecondaryAltButton 1`] = `
+<button
+  className="button type--a8  button--secondary-alt "
+  disabled=""
+  onClick={[Function]}
+  type="button"
+>
+  children
+</button>
+`;
+
+exports[`Button components renders correctly SecondaryButton 1`] = `
+<button
+  className="button type--a8  button--secondary "
+  disabled=""
+  onClick={[Function]}
+  type="button"
+>
+  children
+</button>
+`;

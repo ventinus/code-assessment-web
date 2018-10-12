@@ -1,4 +1,5 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 import {
   PrimaryButton,
@@ -32,20 +33,27 @@ describe('Button components', () => {
     fn = jest.fn()
   })
 
-  buttons.forEach(btn => {
-    it('passes children as text', () => {
-      const {component} = setup(btn, {onClick: fn})
+  buttons.forEach(Btn => {
+    it(`renders correctly ${Btn.name}`, () => {
+      const tree = renderer
+        .create(<Btn onClick={jest.fn()}>children</Btn>)
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+
+    it(`passes children as text ${Btn.name}`, () => {
+      const { component } = setup(Btn, {onClick: fn})
       expect(component.text()).toBe('Button Text')
     })
 
-    it('sets up onClick callbacks', () => {
-      const {button} = setup(btn, {onClick: fn})
+    it(`sets up onClick callbacks ${Btn.name}`, () => {
+      const { button } = setup(Btn, {onClick: fn})
       button.simulate('click')
       expect(fn).toHaveBeenCalled()
     })
 
-    it('prevents onClick when disabled', () => {
-      const {button} = setup(btn, {onClick: fn, disabled: true})
+    it(`prevents onClick when disabled ${Btn.name}`, () => {
+      const { button } = setup(Btn, {onClick: fn, disabled: true})
       button.simulate('click')
       expect(fn).not.toHaveBeenCalled()
     })
